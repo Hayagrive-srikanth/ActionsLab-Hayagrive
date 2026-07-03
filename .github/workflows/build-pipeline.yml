@@ -1,0 +1,43 @@
+name: Build and Test Pipeline - Hayagrive
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Start Build
+        run: echo "Starting build process..."
+
+      - name: Simulate Compilation
+        run: sleep 3
+
+      - name: Finish Build
+        run: |
+          echo "Build completed successfully"
+          echo "Built by Hayagrive"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Start Testing
+        run: echo "Running automated tests..."
+
+      - name: Simulate Test Execution
+        run: sleep 2
+
+      - name: Log Timestamp
+        run: date
+
+      - name: Finish Testing
+        run: echo "All tests passed for Hayagrive"
