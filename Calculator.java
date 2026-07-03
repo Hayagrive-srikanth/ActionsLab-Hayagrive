@@ -1,3 +1,4 @@
+// Testing the sequential pipeline execution
 public class Calculator {
     public int add(int a, int b) {
         return a + b;
